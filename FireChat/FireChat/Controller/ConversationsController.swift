@@ -20,8 +20,25 @@ class ConversationsController : UIViewController {
   //MARK: - Functions
   private func configurUI() {
     view.backgroundColor = .white
-    navigationController?.navigationBar.prefersLargeTitles = true
+    configureNavigationBar()
+  }
+  
+  // 네비게이션 속성
+  private func configureNavigationBar() {
+    let appearance = UINavigationBarAppearance()
+    appearance.configureWithOpaqueBackground()
+    appearance.largeTitleTextAttributes = [.foregroundColor : UIColor.white] // Message 글자의 textColor
+    appearance.backgroundColor = .systemPurple
+    
+    navigationController?.navigationBar.standardAppearance = appearance
+    navigationController?.navigationBar.compactAppearance = appearance
+    navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    
     navigationItem.title = "Messages"
+    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationController?.navigationBar.tintColor = .white
+    navigationController?.navigationBar.isTranslucent = true
+    navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
     
     let image = UIImage(systemName: "person.circle.fill")
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showProfile))
