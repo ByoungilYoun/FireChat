@@ -15,6 +15,7 @@
 		0FE457A526935579003EF7C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE457A326935579003EF7C2 /* LaunchScreen.storyboard */; };
 		0FE457B026935579003EF7C2 /* FireChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE457AF26935579003EF7C2 /* FireChatTests.swift */; };
 		0FE457BB26935579003EF7C2 /* FireChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE457BA26935579003EF7C2 /* FireChatUITests.swift */; };
+		0FE457CF26935669003EF7C2 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE457CE26935669003EF7C2 /* ConversationsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0FE457B626935579003EF7C2 /* FireChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE457BA26935579003EF7C2 /* FireChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireChatUITests.swift; sourceTree = "<group>"; };
 		0FE457BC26935579003EF7C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FE457CE26935669003EF7C2 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,12 @@
 		0FE4579726935578003EF7C2 /* FireChat */ = {
 			isa = PBXGroup;
 			children = (
+				0FE457CD2693562F003EF7C2 /* Model */,
+				0FE457CC2693562D003EF7C2 /* View */,
+				0FE457CB2693562C003EF7C2 /* ViewModel */,
+				0FE457CA2693562A003EF7C2 /* Controller */,
+				0FE457C926935628003EF7C2 /* API */,
+				0FE457C826935625003EF7C2 /* Utils  */,
 				0FE4579826935578003EF7C2 /* AppDelegate.swift */,
 				0FE4579A26935578003EF7C2 /* SceneDelegate.swift */,
 				0FE4579C26935578003EF7C2 /* ViewController.swift */,
@@ -126,6 +134,49 @@
 				0FE457BC26935579003EF7C2 /* Info.plist */,
 			);
 			path = FireChatUITests;
+			sourceTree = "<group>";
+		};
+		0FE457C826935625003EF7C2 /* Utils  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Utils ";
+			sourceTree = "<group>";
+		};
+		0FE457C926935628003EF7C2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0FE457CA2693562A003EF7C2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0FE457CE26935669003EF7C2 /* ConversationsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0FE457CB2693562C003EF7C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0FE457CC2693562D003EF7C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0FE457CD2693562F003EF7C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +311,7 @@
 			files = (
 				0FE4579D26935578003EF7C2 /* ViewController.swift in Sources */,
 				0FE4579926935578003EF7C2 /* AppDelegate.swift in Sources */,
+				0FE457CF26935669003EF7C2 /* ConversationsController.swift in Sources */,
 				0FE4579B26935578003EF7C2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
