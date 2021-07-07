@@ -18,56 +18,15 @@ class LoginController : UIViewController {
     return iv
   }()
   
-  private lazy var emailContainerView : UIView = {
-    let containerView = UIView()
-    containerView.backgroundColor = .clear
-    
-    let iv = UIImageView()
-    iv.image = UIImage(systemName: "envelope")
-    iv.tintColor = .white
-    
-    containerView.addSubview(iv)
-    iv.snp.makeConstraints {
-      $0.centerY.equalTo(containerView)
-      $0.leading.equalToSuperview().offset(8)
-      $0.width.equalTo(24)
-      $0.height.equalTo(24)
-    }
-    
-    containerView.addSubview(emailTextField)
-    emailTextField.snp.makeConstraints {
-      $0.centerY.equalTo(containerView)
-      $0.leading.equalTo(iv.snp.trailing).offset(8)
-      $0.right.equalToSuperview()
-      $0.bottom.equalToSuperview()
-    }
+  private lazy var emailContainerView : InputContainerView = {
+    let containerView = InputContainerView(image: UIImage(systemName: "envelope"), textField: emailTextField)
     return containerView
   }()
   
-  private lazy var passwordContainerView : UIView = {
-    let containerView = UIView()
-    containerView.backgroundColor = .clear
-    
-    let iv = UIImageView()
-    iv.image = UIImage(systemName: "lock")
-    iv.tintColor = .white
-    
-    containerView.addSubview(iv)
-    iv.snp.makeConstraints {
-      $0.centerY.equalTo(containerView)
-      $0.leading.equalToSuperview().offset(8)
-      $0.width.equalTo(24)
-      $0.height.equalTo(24)
-    }
-    
-    containerView.addSubview(passwordTextField)
-    passwordTextField.snp.makeConstraints {
-      $0.centerY.equalTo(containerView)
-      $0.leading.equalTo(iv.snp.trailing).offset(8)
-      $0.right.equalToSuperview()
-      $0.bottom.equalToSuperview()
-    }
-    return containerView  }()
+  private lazy var passwordContainerView : InputContainerView = {
+    let containerView = InputContainerView(image: UIImage(systemName: "lock"), textField: passwordTextField)
+    return containerView
+  }()
   
   private let loginButton : UIButton = {
     let button = UIButton(type: .system)
@@ -78,24 +37,23 @@ class LoginController : UIViewController {
     return button
   }()
   
-  private let emailTextField : UITextField = {
-    let tf = UITextField()
-    tf.placeholder = "Email"
-    tf.textColor = .white
-    return tf
-  }()
+  private let emailTextField = CustomTextField(placeholder: "Email")
   
-  private let passwordTextField : UITextField = {
-    let tf = UITextField()
-    tf.placeholder = "Password"
-    tf.textColor = .white
+  private let passwordTextField : CustomTextField = {
+    let tf = CustomTextField(placeholder: "Password")
     tf.isSecureTextEntry = true
     return tf
   }()
+  
   //MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
+  }
+  
+  //MARK: - Keyboard endEditing
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
   }
   
   //MARK: - Functions
@@ -116,14 +74,6 @@ class LoginController : UIViewController {
     let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
     stack.axis = .vertical
     stack.spacing = 16
-    
-    emailContainerView.snp.makeConstraints {
-      $0.height.equalTo(50)
-    }
-    
-    passwordContainerView.snp.makeConstraints {
-      $0.height.equalTo(50)
-    }
     
     loginButton.snp.makeConstraints {
       $0.height.equalTo(50)
