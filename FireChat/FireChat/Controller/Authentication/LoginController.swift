@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class LoginController : UIViewController {
   
@@ -15,6 +16,27 @@ class LoginController : UIViewController {
     iv.image = UIImage(systemName: "bubble.right")
     iv.tintColor = .white
     return iv
+  }()
+  
+  private let emailContainerView : UIView = {
+    let view = UIView()
+    view.backgroundColor = .cyan
+    return view
+  }()
+  
+  private let passwordContainerView : UIView = {
+    let view = UIView()
+    view.backgroundColor = .yellow
+    return view
+  }()
+  
+  private let loginButton : UIButton = {
+    let button = UIButton(type: .system)
+    button.setTitle("Log In", for: .normal)
+    button.layer.cornerRadius = 5
+    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+    button.backgroundColor = .systemRed
+    return button
   }()
   
   //MARK: - Lifecycle
@@ -30,11 +52,36 @@ class LoginController : UIViewController {
     navigationController?.navigationBar.barStyle = .black // LargeNavigationTitle 을 쓰면 barStyle 을 black 을 줘도 안먹는다. 스위프트 에러
     
     view.addSubview(iconImage)
-    iconImage.translatesAutoresizingMaskIntoConstraints = false
-    iconImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    iconImage.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    iconImage.heightAnchor.constraint(equalToConstant: 120).isActive = true
-    iconImage.widthAnchor.constraint(equalToConstant: 120).isActive = true 
+    
+    iconImage.snp.makeConstraints {
+      $0.centerX.equalToSuperview()
+      $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(32)
+      $0.width.equalTo(120)
+      $0.height.equalTo(120)
+    }
+    
+    let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
+    stack.axis = .vertical
+    stack.spacing = 16
+    
+    emailContainerView.snp.makeConstraints {
+      $0.height.equalTo(50)
+    }
+    
+    passwordContainerView.snp.makeConstraints {
+      $0.height.equalTo(50)
+    }
+    
+    loginButton.snp.makeConstraints {
+      $0.height.equalTo(50)
+    }
+    
+    view.addSubview(stack)
+    stack.snp.makeConstraints {
+      $0.top.equalTo(iconImage.snp.bottom).offset(32)
+      $0.leading.equalToSuperview().offset(32)
+      $0.trailing.equalToSuperview().offset(-32)
+    }
   }
   
   func configureGradientLayer() {
