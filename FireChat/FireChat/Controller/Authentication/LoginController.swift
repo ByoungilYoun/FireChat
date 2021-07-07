@@ -18,17 +18,56 @@ class LoginController : UIViewController {
     return iv
   }()
   
-  private let emailContainerView : UIView = {
-    let view = UIView()
-    view.backgroundColor = .cyan
-    return view
+  private lazy var emailContainerView : UIView = {
+    let containerView = UIView()
+    containerView.backgroundColor = .clear
+    
+    let iv = UIImageView()
+    iv.image = UIImage(systemName: "envelope")
+    iv.tintColor = .white
+    
+    containerView.addSubview(iv)
+    iv.snp.makeConstraints {
+      $0.centerY.equalTo(containerView)
+      $0.leading.equalToSuperview().offset(8)
+      $0.width.equalTo(24)
+      $0.height.equalTo(24)
+    }
+    
+    containerView.addSubview(emailTextField)
+    emailTextField.snp.makeConstraints {
+      $0.centerY.equalTo(containerView)
+      $0.leading.equalTo(iv.snp.trailing).offset(8)
+      $0.right.equalToSuperview()
+      $0.bottom.equalToSuperview()
+    }
+    return containerView
   }()
   
-  private let passwordContainerView : UIView = {
-    let view = UIView()
-    view.backgroundColor = .yellow
-    return view
-  }()
+  private lazy var passwordContainerView : UIView = {
+    let containerView = UIView()
+    containerView.backgroundColor = .clear
+    
+    let iv = UIImageView()
+    iv.image = UIImage(systemName: "lock")
+    iv.tintColor = .white
+    
+    containerView.addSubview(iv)
+    iv.snp.makeConstraints {
+      $0.centerY.equalTo(containerView)
+      $0.leading.equalToSuperview().offset(8)
+      $0.width.equalTo(24)
+      $0.height.equalTo(24)
+    }
+    
+    containerView.addSubview(passwordTextField)
+    passwordTextField.snp.makeConstraints {
+      $0.centerY.equalTo(containerView)
+      $0.leading.equalTo(iv.snp.trailing).offset(8)
+      $0.right.equalToSuperview()
+      $0.bottom.equalToSuperview()
+    }
+    return containerView  }()
   
   private let loginButton : UIButton = {
     let button = UIButton(type: .system)
@@ -39,6 +78,20 @@ class LoginController : UIViewController {
     return button
   }()
   
+  private let emailTextField : UITextField = {
+    let tf = UITextField()
+    tf.placeholder = "Email"
+    tf.textColor = .white
+    return tf
+  }()
+  
+  private let passwordTextField : UITextField = {
+    let tf = UITextField()
+    tf.placeholder = "Password"
+    tf.textColor = .white
+    tf.isSecureTextEntry = true
+    return tf
+  }()
   //MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
