@@ -32,8 +32,9 @@ class LoginController : UIViewController {
     let button = UIButton(type: .system)
     button.setTitle("Log In", for: .normal)
     button.layer.cornerRadius = 5
-    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-    button.backgroundColor = .systemRed
+    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+    button.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+    button.setTitleColor(.white, for: .normal)
     return button
   }()
   
@@ -43,6 +44,15 @@ class LoginController : UIViewController {
     let tf = CustomTextField(placeholder: "Password")
     tf.isSecureTextEntry = true
     return tf
+  }()
+  
+  private let dontHaveAccountButton : UIButton = {
+    let button = UIButton(type: .system)
+    let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [.font : UIFont.systemFont(ofSize: 16), .foregroundColor : UIColor.white])
+    attributedTitle.append(NSAttributedString(string: "Sign Up", attributes: [.font : UIFont.boldSystemFont(ofSize: 16), .foregroundColor : UIColor.white]))
+    button.setAttributedTitle(attributedTitle, for: .normal)
+    button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
+    return button
   }()
   
   //MARK: - Lifecycle
@@ -61,8 +71,13 @@ class LoginController : UIViewController {
     configureGradientLayer()
     navigationController?.navigationBar.isHidden = true
     navigationController?.navigationBar.barStyle = .black // LargeNavigationTitle 을 쓰면 barStyle 을 black 을 줘도 안먹는다. 스위프트 에러
+    let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
+    stack.axis = .vertical
+    stack.spacing = 16
     
-    view.addSubview(iconImage)
+    [iconImage, stack, dontHaveAccountButton].forEach {
+      view.addSubview($0)
+    }
     
     iconImage.snp.makeConstraints {
       $0.centerX.equalToSuperview()
@@ -71,19 +86,20 @@ class LoginController : UIViewController {
       $0.height.equalTo(120)
     }
     
-    let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
-    stack.axis = .vertical
-    stack.spacing = 16
-    
     loginButton.snp.makeConstraints {
       $0.height.equalTo(50)
     }
     
-    view.addSubview(stack)
     stack.snp.makeConstraints {
       $0.top.equalTo(iconImage.snp.bottom).offset(32)
       $0.leading.equalToSuperview().offset(32)
       $0.trailing.equalToSuperview().offset(-32)
+    }
+    
+    dontHaveAccountButton.snp.makeConstraints {
+      $0.leading.equalToSuperview().offset(32)
+      $0.trailing.equalToSuperview().offset(-32)
+      $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
     }
   }
   
@@ -93,5 +109,11 @@ class LoginController : UIViewController {
     gradient.locations = [0 , 1]
     view.layer.addSublayer(gradient)
     gradient.frame = view.frame
+  }
+  
+  //MARK: - Selectors
+  @objc func handleShowSignUp() {
+    let controller = RegistrationController()
+    navigationController?.pushViewController(controller, animated: true)
   }
 }
