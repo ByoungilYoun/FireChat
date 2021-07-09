@@ -19,22 +19,17 @@ class LoginController : UIViewController {
   }()
   
   private lazy var emailContainerView : InputContainerView = {
-    let containerView = InputContainerView(image: UIImage(systemName: "envelope"), textField: emailTextField)
+    let containerView = InputContainerView(image: #imageLiteral(resourceName: "ic_mail_outline_white_2x"), textField: emailTextField)
     return containerView
   }()
   
   private lazy var passwordContainerView : InputContainerView = {
-    let containerView = InputContainerView(image: UIImage(systemName: "lock"), textField: passwordTextField)
+    let containerView = InputContainerView(image: #imageLiteral(resourceName: "ic_lock_outline_white_2x"), textField: passwordTextField)
     return containerView
   }()
-  
-  private let loginButton : UIButton = {
-    let button = UIButton(type: .system)
-    button.setTitle("Log In", for: .normal)
-    button.layer.cornerRadius = 5
-    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-    button.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
-    button.setTitleColor(.white, for: .normal)
+
+  private let loginButton : CustomButton = {
+    let button = CustomButton(title: "Log In")
     return button
   }()
   
@@ -101,14 +96,6 @@ class LoginController : UIViewController {
       $0.trailing.equalToSuperview().offset(-32)
       $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
     }
-  }
-  
-  func configureGradientLayer() {
-    let gradient = CAGradientLayer()
-    gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemPink.cgColor]
-    gradient.locations = [0 , 1]
-    view.layer.addSublayer(gradient)
-    gradient.frame = view.frame
   }
   
   //MARK: - Selectors
