@@ -11,6 +11,8 @@ import SnapKit
 class LoginController : UIViewController {
   
   //MARK: - Properties
+  private var viewModel = LoginViewModel()
+  
   private let iconImage : UIImageView = {
     let iv = UIImageView()
     iv.image = UIImage(systemName: "bubble.right")
@@ -30,6 +32,7 @@ class LoginController : UIViewController {
 
   private let loginButton : CustomButton = {
     let button = CustomButton(title: "Log In")
+    button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
     return button
   }()
   
@@ -96,11 +99,37 @@ class LoginController : UIViewController {
       $0.trailing.equalToSuperview().offset(-32)
       $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
     }
+    
+    emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+  }
+  
+  func checkFormStatus() {
+    if viewModel.formIsValid {
+      loginButton.isEnabled = true
+      loginButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+    } else {
+      loginButton.isEnabled = false
+      loginButton.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+    }
   }
   
   //MARK: - Selectors
+  @objc func handleLogin() {
+    print("Debug handle login here")
+  }
+  
   @objc func handleShowSignUp() {
     let controller = RegistrationController()
     navigationController?.pushViewController(controller, animated: true)
+  }
+  
+  @objc func textDidChange(sender : UITextField) {
+    if sender == emailTextField {
+      viewModel.email = sender.text
+    } else {
+      viewModel.password = sender.text
+    }
+    checkFormStatus()
   }
 }

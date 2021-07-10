@@ -17,6 +17,7 @@ class CustomButton : UIButton {
     titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
     backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
     setTitleColor(.white, for: .normal)
+    isEnabled = false 
   }
   
   required init?(coder: NSCoder) {
