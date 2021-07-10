@@ -15,7 +15,7 @@ class CustomButton : UIButton {
     setTitle(title, for: .normal)
     layer.cornerRadius = 5
     titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-    backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+    backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
     setTitleColor(.white, for: .normal)
     isEnabled = false 
   }

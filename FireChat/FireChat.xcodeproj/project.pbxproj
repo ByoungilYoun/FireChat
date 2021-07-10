@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F243B7626936A2200F84862 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F243B7526936A2200F84862 /* SnapKit */; };
 		0F70B6992699C13E00298B1C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70B6982699C13E00298B1C /* LoginViewModel.swift */; };
+		0F70B69B2699E94800298B1C /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70B69A2699E94800298B1C /* RegistrationViewModel.swift */; };
 		0F7768312696189500D76B8E /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7768302696189500D76B8E /* InputContainerView.swift */; };
 		0F77683326961DDC00D76B8E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F77683226961DDC00D76B8E /* CustomTextField.swift */; };
 		0FE4579926935578003EF7C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE4579826935578003EF7C2 /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		0F70B6982699C13E00298B1C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0F70B69A2699E94800298B1C /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		0F7768302696189500D76B8E /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		0F77683226961DDC00D76B8E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0FE4579526935578003EF7C2 /* FireChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F70B69C2699E95000298B1C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				0F70B6982699C13E00298B1C /* LoginViewModel.swift */,
+				0F70B69A2699E94800298B1C /* RegistrationViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		0FE4578C26935578003EF7C2 = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +190,7 @@
 		0FE457CB2693562C003EF7C2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0F70B6982699C13E00298B1C /* LoginViewModel.swift */,
+				0F70B69C2699E95000298B1C /* Authentication */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -347,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FE457D4269364F8003EF7C2 /* RegisterationController.swift in Sources */,
+				0F70B69B2699E94800298B1C /* RegistrationViewModel.swift in Sources */,
 				0FFA0C172698899300D78931 /* Extensions.swift in Sources */,
 				0F70B6992699C13E00298B1C /* LoginViewModel.swift in Sources */,
 				0FE4579D26935578003EF7C2 /* ViewController.swift in Sources */,

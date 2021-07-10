@@ -8,6 +8,10 @@
 import UIKit
 import SnapKit
 
+protocol AuthenticationControllerProtocol {
+  func checkFormStatus()
+}
+
 class LoginController : UIViewController {
   
   //MARK: - Properties
@@ -104,16 +108,6 @@ class LoginController : UIViewController {
     passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
   }
   
-  func checkFormStatus() {
-    if viewModel.formIsValid {
-      loginButton.isEnabled = true
-      loginButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-    } else {
-      loginButton.isEnabled = false
-      loginButton.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
-    }
-  }
-  
   //MARK: - Selectors
   @objc func handleLogin() {
     print("Debug handle login here")
@@ -131,5 +125,18 @@ class LoginController : UIViewController {
       viewModel.password = sender.text
     }
     checkFormStatus()
+  }
+}
+
+  //MARK: - AuthenticationControllerProtocol
+extension LoginController : AuthenticationControllerProtocol {
+  func checkFormStatus() {
+    if viewModel.formIsValid {
+      loginButton.isEnabled = true
+      loginButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+    } else {
+      loginButton.isEnabled = false
+      loginButton.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+    }
   }
 }
