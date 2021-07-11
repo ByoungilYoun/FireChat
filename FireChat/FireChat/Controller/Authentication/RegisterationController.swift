@@ -58,6 +58,7 @@ class RegistrationController : UIViewController {
   
   private let signupButton : CustomButton = {
     let button = CustomButton(title: "Sign Up")
+    button.isEnabled = false
     button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
     return button
   }()
@@ -68,7 +69,6 @@ class RegistrationController : UIViewController {
     attributedTitle.append(NSAttributedString(string: "Log In", attributes: [.font : UIFont.boldSystemFont(ofSize: 16), .foregroundColor : UIColor.white]))
     button.setAttributedTitle(attributedTitle, for: .normal)
     button.addTarget(self, action: #selector(handleShowLogin), for: .touchUpInside)
-    button.isEnabled = false
     return button
   }()
   

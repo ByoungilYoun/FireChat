@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ConversationsController : UIViewController {
   
@@ -21,6 +22,7 @@ class ConversationsController : UIViewController {
   //MARK: - Functions
   private func configurUI() {
     view.backgroundColor = .white
+    authenticateUser()
     configureNavigationBar()
     configureTableView()
   }
@@ -57,9 +59,36 @@ class ConversationsController : UIViewController {
     view.addSubview(tableView)
     tableView.frame = view.frame
   }
+  
+  func presentLoginScreen() {
+    DispatchQueue.main.async {
+      let controller = LoginController()
+      let nav = UINavigationController(rootViewController: controller)
+      nav.modalPresentationStyle = .fullScreen
+      self.present(nav, animated: true, completion: nil)
+    }
+  }
+  //MARK: - API
+  
+  func authenticateUser() {
+    if Auth.auth().currentUser?.uid == nil {
+      presentLoginScreen()
+    } else {
+      print("Debug : User id is \(String(describing: Auth.auth().currentUser?.uid))")
+    }
+  }
+  
+  func logout() {
+    do {
+      try Auth.auth().signOut()
+    } catch {
+      print("Debug : Error signing out...")
+    }
+  }
+  
   //MARK: - Selectors
   @objc func showProfile() {
-    print("1234")
+    logout()
   }
 }
 
