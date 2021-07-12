@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F243B7626936A2200F84862 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0F243B7526936A2200F84862 /* SwiftPackageProductDependency */; };
+		0F243B7626936A2200F84862 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F243B7526936A2200F84862 /* SnapKit */; };
 		0F70B6992699C13E00298B1C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70B6982699C13E00298B1C /* LoginViewModel.swift */; };
 		0F70B69B2699E94800298B1C /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70B69A2699E94800298B1C /* RegistrationViewModel.swift */; };
 		0F7768312696189500D76B8E /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7768302696189500D76B8E /* InputContainerView.swift */; };
@@ -24,6 +24,7 @@
 		0FE457D2269364EA003EF7C2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE457D1269364EA003EF7C2 /* LoginController.swift */; };
 		0FE457D4269364F8003EF7C2 /* RegisterationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE457D3269364F8003EF7C2 /* RegisterationController.swift */; };
 		0FE5FB50269B46ED00AA53FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FE5FB4F269B46ED00AA53FD /* GoogleService-Info.plist */; };
+		0FF08F70269C9F9500AC9203 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF08F6F269C9F9500AC9203 /* AuthService.swift */; };
 		0FFA0C172698899300D78931 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA0C162698899300D78931 /* Extensions.swift */; };
 		0FFA0C1A26988BC100D78931 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA0C1926988BC100D78931 /* CustomButton.swift */; };
 		47A5CFF46851AA2839E16801 /* Pods_FireChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0CD1CE8F126209FED1B9CF /* Pods_FireChat.framework */; };
@@ -71,6 +72,7 @@
 		0FE457D1269364EA003EF7C2 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		0FE457D3269364F8003EF7C2 /* RegisterationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationController.swift; sourceTree = "<group>"; };
 		0FE5FB4F269B46ED00AA53FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0FF08F6F269C9F9500AC9203 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0FFA0C162698899300D78931 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0FFA0C1926988BC100D78931 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		207519C6DC1FE5A6AE6DDCFA /* Pods-FireChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireChat.release.xcconfig"; path = "Target Support Files/Pods-FireChat/Pods-FireChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F243B7626936A2200F84862 /* BuildFile in Frameworks */,
+				0F243B7626936A2200F84862 /* SnapKit in Frameworks */,
 				47A5CFF46851AA2839E16801 /* Pods_FireChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +196,7 @@
 		0FE457C926935628003EF7C2 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				0FF08F6F269C9F9500AC9203 /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -251,7 +254,6 @@
 				FAD02A052C4993CFCA6C386E /* Pods-FireChatTests.debug.xcconfig */,
 				EBFBCA0C4189A52745DDB81B /* Pods-FireChatTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -284,7 +286,7 @@
 			);
 			name = FireChat;
 			packageProductDependencies = (
-				0F243B7526936A2200F84862 /* SwiftPackageProductDependency */,
+				0F243B7526936A2200F84862 /* SnapKit */,
 			);
 			productName = FireChat;
 			productReference = 0FE4579526935578003EF7C2 /* FireChat.app */;
@@ -361,7 +363,7 @@
 			);
 			mainGroup = 0FE4578C26935578003EF7C2;
 			packageReferences = (
-				0F243B7426936A2200F84862 /* RemoteSwiftPackageReference */,
+				0F243B7426936A2200F84862 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 0FE4579626935578003EF7C2 /* Products */;
 			projectDirPath = "";
@@ -516,6 +518,7 @@
 				0F70B6992699C13E00298B1C /* LoginViewModel.swift in Sources */,
 				0FE4579D26935578003EF7C2 /* ViewController.swift in Sources */,
 				0F7768312696189500D76B8E /* InputContainerView.swift in Sources */,
+				0FF08F70269C9F9500AC9203 /* AuthService.swift in Sources */,
 				0FFA0C1A26988BC100D78931 /* CustomButton.swift in Sources */,
 				0FE4579926935578003EF7C2 /* AppDelegate.swift in Sources */,
 				0F77683326961DDC00D76B8E /* CustomTextField.swift in Sources */,
@@ -864,7 +867,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0F243B7426936A2200F84862 /* RemoteSwiftPackageReference */ = {
+		0F243B7426936A2200F84862 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -875,9 +878,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0F243B7526936A2200F84862 /* SwiftPackageProductDependency */ = {
+		0F243B7526936A2200F84862 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0F243B7426936A2200F84862 /* RemoteSwiftPackageReference */;
+			package = 0F243B7426936A2200F84862 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
