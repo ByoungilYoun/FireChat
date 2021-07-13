@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:FireChat.xcodeproj">
+      location = "group:/Users/youn/Documents/dev/FireChat/FireChat/FireChat.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
