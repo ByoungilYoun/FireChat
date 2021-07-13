@@ -13,6 +13,19 @@ class ConversationsController : UIViewController {
   //MARK: - Properties
   private let tableView = UITableView()
   
+  private let newMessageButton : UIButton = {
+    let button = UIButton(type: .system)
+    button.setImage(UIImage(systemName: "plus"), for: .normal)
+    button.backgroundColor = .systemPurple
+    button.tintColor = .white
+    button.imageView?.snp.makeConstraints {
+      $0.height.equalTo(24)
+      $0.width.equalTo(24)
+    }
+    button.addTarget(self, action: #selector(shopNewMessage), for: .touchUpInside)
+    return button
+  }()
+  
   //MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -58,6 +71,15 @@ class ConversationsController : UIViewController {
     
     view.addSubview(tableView)
     tableView.frame = view.frame
+    
+    view.addSubview(newMessageButton)
+    newMessageButton.snp.makeConstraints {
+      $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
+      $0.trailing.equalToSuperview().offset(-24)
+      $0.height.equalTo(56)
+      $0.width.equalTo(56)
+    }
+    newMessageButton.layer.cornerRadius = 56 / 2
   }
   
   func presentLoginScreen() {
@@ -91,6 +113,13 @@ class ConversationsController : UIViewController {
   @objc func showProfile() {
     logout()
   }
+  
+  @objc func shopNewMessage(){
+    let controller = NewMessageController()
+    let nav = UINavigationController(rootViewController: controller)
+    nav.modalPresentationStyle = .fullScreen
+    present(nav, animated: true, completion: nil)
+  }
 }
 
   //MARK: - UITableViewDataSource
@@ -101,7 +130,9 @@ extension ConversationsController : UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    cell.backgroundColor = .white
     cell.textLabel?.text = "Test Cell"
+    cell.textLabel?.textColor = .black
     return cell
   }
 }
