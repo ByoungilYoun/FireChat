@@ -15,10 +15,37 @@ class NewMessageController : UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
+    
   }
   
   //MARK: - Functions
   private func configureUI() {
-    view.backgroundColor = .systemPink
+    view.backgroundColor = .white
+    configureNavigationBar(withTitle: "New Message", prefersLargeTitles: false)
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleDismissal))
+    
+    tableView.tableFooterView = UIView()
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    tableView.rowHeight = 80
+  }
+  
+  //MARK: - @objc func
+  @objc func handleDismissal() {
+    dismiss(animated: true, completion: nil)
+  }
+}
+
+  //MARK: - UITableViewDataSource
+extension NewMessageController {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 2
+  }
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    cell.backgroundColor = .white
+    cell.textLabel?.textColor = .black
+    cell.textLabel?.text = "Test cell"
+    return cell
   }
 }

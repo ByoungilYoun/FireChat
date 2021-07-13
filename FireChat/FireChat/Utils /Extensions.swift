@@ -30,4 +30,21 @@ extension UIViewController {
       UIViewController.hud.dismiss()
     }
   }
+  
+  func configureNavigationBar(withTitle title : String, prefersLargeTitles : Bool) {
+    let appearance = UINavigationBarAppearance()
+    appearance.configureWithOpaqueBackground()
+    appearance.largeTitleTextAttributes = [.foregroundColor : UIColor.white] // Message 글자의 textColor
+    appearance.backgroundColor = .systemPurple
+    
+    navigationController?.navigationBar.standardAppearance = appearance
+    navigationController?.navigationBar.compactAppearance = appearance
+    navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    
+    navigationItem.title = title
+    navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
+    navigationController?.navigationBar.tintColor = .white
+    navigationController?.navigationBar.isTranslucent = true
+    navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
+  }
 }
