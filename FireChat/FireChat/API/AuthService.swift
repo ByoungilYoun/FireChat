@@ -44,7 +44,7 @@ struct AuthService {
           }
           
           guard let uid = result?.user.uid else {return}
-          let data = ["email" : credentials.email, "password": credentials.password, "fullname" : credentials.fullname, "username" : credentials.username, "profileImageUrl" : profileImageUrl] as [String : Any]
+          let data = ["email" : credentials.email, "password": credentials.password, "fullname" : credentials.fullname, "username" : credentials.username, "profileImageUrl" : profileImageUrl, "uid" : uid] as [String : Any]
           
           Firestore.firestore().collection("users").document(uid).setData(data, completion: completion)
           
