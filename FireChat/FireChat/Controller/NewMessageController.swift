@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol NewMessageControllerDelegate : AnyObject {
+  func controller(_ controller : NewMessageController , wantsToStartChatWith user : User)
+}
+
 class NewMessageController : UITableViewController {
   
   //MARK: - Properties
   
   private var users = [User]()
+  
+  weak var delegate : NewMessageControllerDelegate?
   
   //MARK: - Lifecycle
   override func viewDidLoad() {
@@ -54,5 +60,12 @@ extension NewMessageController {
     let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as! UserCell
     cell.user = users[indexPath.row]
     return cell
+  }
+}
+
+  //MARK: - UITableViewDelegate
+extension NewMessageController {
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    delegate?.controller(self, wantsToStartChatWith: users[indexPath.row])
   }
 }
