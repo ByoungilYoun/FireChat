@@ -6,11 +6,19 @@
 //
 
 import UIKit
+import SDWebImage
 
 class UserCell : UITableViewCell {
   
   //MARK: - Properties
   static let identifier = "UserCell"
+  
+  var user : User? {
+    didSet {
+      configure()
+    }
+  }
+  
   
   private let profileImageView : UIImageView = {
     let view = UIImageView()
@@ -69,5 +77,15 @@ class UserCell : UITableViewCell {
       $0.centerY.equalTo(profileImageView)
       $0.leading.equalTo(profileImageView.snp.trailing).offset(12)
     }
+  }
+  
+  func configure() {
+    guard let user = user else {return}
+    
+    fullnameLabel.text = user.fullname
+    usernameLabel.text = user.username
+    
+    guard let url = URL(string: user.profileImageUrl) else {return}
+    profileImageView.sd_setImage(with: url)
   }
 }
