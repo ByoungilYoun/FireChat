@@ -12,6 +12,12 @@ class MessageCell : UICollectionViewCell {
   //MARK: - Properties
   static let identifier = "MessageCell"
   
+  var message : Message? {
+    didSet {
+      configure()
+    }
+  }
+  
   private let profileImageView : UIImageView = {
     let iv = UIImageView()
     iv.contentMode = .scaleAspectFill
@@ -26,7 +32,6 @@ class MessageCell : UICollectionViewCell {
     tv.font = .systemFont(ofSize: 16)
     tv.isScrollEnabled = false
     tv.textColor = .white
-    tv.text = "some text"
     tv.isEditable = false
     return tv
   }()
@@ -76,5 +81,13 @@ class MessageCell : UICollectionViewCell {
       $0.trailing.equalTo(bubbleContainer.snp.trailing).offset(-12)
       $0.bottom.equalTo(bubbleContainer.snp.bottom).offset(-4)
     }
+  }
+  
+  func configure() {
+    guard let message = message else {return}
+    let viewModel = MessageViewModel(message: message)
+    bubbleContainer.backgroundColor = viewModel.messageBackgroundColor
+    textView.textColor = viewModel.messageTextColor
+    textView.text = message.text
   }
 }
