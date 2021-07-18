@@ -71,6 +71,7 @@ class MessageCell : UICollectionViewCell {
     
     bubbleContainer.snp.makeConstraints {
       $0.top.equalToSuperview()
+      $0.bottom.equalToSuperview()
       $0.width.lessThanOrEqualTo(250)
     }
     
