@@ -34,6 +34,7 @@
 		0FE457D4269364F8003EF7C2 /* RegisterationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE457D3269364F8003EF7C2 /* RegisterationController.swift */; };
 		0FE5FB50269B46ED00AA53FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FE5FB4F269B46ED00AA53FD /* GoogleService-Info.plist */; };
 		0FF08F70269C9F9500AC9203 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF08F6F269C9F9500AC9203 /* AuthService.swift */; };
+		0FF2E51F26A3EA770008AF72 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2E51E26A3EA770008AF72 /* Constants.swift */; };
 		0FFA0C172698899300D78931 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA0C162698899300D78931 /* Extensions.swift */; };
 		0FFA0C1A26988BC100D78931 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA0C1926988BC100D78931 /* CustomButton.swift */; };
 		47A5CFF46851AA2839E16801 /* Pods_FireChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0CD1CE8F126209FED1B9CF /* Pods_FireChat.framework */; };
@@ -91,6 +92,7 @@
 		0FE457D3269364F8003EF7C2 /* RegisterationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationController.swift; sourceTree = "<group>"; };
 		0FE5FB4F269B46ED00AA53FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FF08F6F269C9F9500AC9203 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		0FF2E51E26A3EA770008AF72 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0FFA0C162698899300D78931 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0FFA0C1926988BC100D78931 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		207519C6DC1FE5A6AE6DDCFA /* Pods-FireChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireChat.release.xcconfig"; path = "Target Support Files/Pods-FireChat/Pods-FireChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				0FFA0C162698899300D78931 /* Extensions.swift */,
+				0FF2E51E26A3EA770008AF72 /* Constants.swift */,
 			);
 			path = "Utils ";
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				0FFA0C172698899300D78931 /* Extensions.swift in Sources */,
 				0F7425A226A33811000A65CA /* MessageViewModel.swift in Sources */,
 				0F70B6992699C13E00298B1C /* LoginViewModel.swift in Sources */,
+				0FF2E51F26A3EA770008AF72 /* Constants.swift in Sources */,
 				0F7FDC08269F4FF90092F7E0 /* User.swift in Sources */,
 				0F7425A026A3356A000A65CA /* Message.swift in Sources */,
 				0F2434E0269DE8A600008B45 /* NewMessageController.swift in Sources */,
