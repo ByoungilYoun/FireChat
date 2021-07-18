@@ -18,6 +18,9 @@ class MessageCell : UICollectionViewCell {
     }
   }
   
+  var bubbleLeftAnchor : NSLayoutConstraint!
+  var bubbleRightAnchor : NSLayoutConstraint!
+  
   private let profileImageView : UIImageView = {
     let iv = UIImageView()
     iv.contentMode = .scaleAspectFill
@@ -68,9 +71,13 @@ class MessageCell : UICollectionViewCell {
     
     bubbleContainer.snp.makeConstraints {
       $0.top.equalToSuperview()
-      $0.leading.equalTo(profileImageView.snp.trailing).offset(12)
       $0.width.lessThanOrEqualTo(250)
     }
+    
+    bubbleLeftAnchor = bubbleContainer.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12)
+    bubbleLeftAnchor.isActive = false
+    bubbleRightAnchor = bubbleContainer.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12)
+    bubbleRightAnchor.isActive = false
     
     bubbleContainer.layer.cornerRadius = 12
     
@@ -89,5 +96,10 @@ class MessageCell : UICollectionViewCell {
     bubbleContainer.backgroundColor = viewModel.messageBackgroundColor
     textView.textColor = viewModel.messageTextColor
     textView.text = message.text
+    
+    bubbleLeftAnchor.isActive = viewModel.leftAnchorActive
+    bubbleRightAnchor.isActive = viewModel.rightAnchorActive
+    
+    profileImageView.isHidden = viewModel.shouldHideProfileImage
   }
 }
