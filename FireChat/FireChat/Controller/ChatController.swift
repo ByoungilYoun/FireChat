@@ -31,6 +31,7 @@ class ChatController : UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
+    fetchMessages()
   }
   
   override var inputAccessoryView: UIView? {
@@ -54,6 +55,13 @@ class ChatController : UICollectionViewController {
     collectionView.register(MessageCell.self, forCellWithReuseIdentifier: MessageCell.identifier)
     collectionView.alwaysBounceVertical = true
   }
+  
+  func fetchMessages() {
+    Service.fetchMessages(forUser: user) { messages in
+      self.messages = messages
+      self.collectionView.reloadData()
+    }
+  }
 }
 
   //MARK: - UICollectionViewDataSource
@@ -65,6 +73,7 @@ extension ChatController {
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessageCell.identifier, for: indexPath) as! MessageCell
     cell.message = messages[indexPath.row]
+    cell.message?.user = user
     return cell
   }
 }
@@ -87,7 +96,7 @@ extension ChatController : CustomInputAccessoryViewDelegate {
         print("Debug : Failed to upload message with error : \(error.localizedDescription)")
         return
       }
-      inputView.messageInputTextView.text = nil
+      inputView.clearMessageText()
     }
   }
 }
