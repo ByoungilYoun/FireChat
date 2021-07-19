@@ -20,6 +20,8 @@
 		0F77683326961DDC00D76B8E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F77683226961DDC00D76B8E /* CustomTextField.swift */; };
 		0F7FDC08269F4FF90092F7E0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7FDC07269F4FF90092F7E0 /* User.swift */; };
 		0F7FDC0A269F54260092F7E0 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7FDC09269F54260092F7E0 /* Service.swift */; };
+		0FA9C6BF26A5CB5A00BCE087 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9C6BE26A5CB5A00BCE087 /* ProfileViewModel.swift */; };
+		0FA9C6C126A5D06900BCE087 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9C6C026A5D06900BCE087 /* ProfileCell.swift */; };
 		0FB8DA8D26A4574F00DAAC21 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8DA8C26A4574F00DAAC21 /* ConversationCell.swift */; };
 		0FB8DA8F26A45A5000DAAC21 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8DA8E26A45A5000DAAC21 /* ConversationViewModel.swift */; };
 		0FD01C6D26A5AD0500BBD837 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD01C6C26A5AD0500BBD837 /* ProfileController.swift */; };
@@ -76,6 +78,8 @@
 		0F77683226961DDC00D76B8E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0F7FDC07269F4FF90092F7E0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F7FDC09269F54260092F7E0 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		0FA9C6BE26A5CB5A00BCE087 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		0FA9C6C026A5D06900BCE087 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		0FB8DA8C26A4574F00DAAC21 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		0FB8DA8E26A45A5000DAAC21 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		0FD01C6C26A5AD0500BBD837 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				0F70B69C2699E95000298B1C /* Authentication */,
 				0F7425A126A33811000A65CA /* MessageViewModel.swift */,
 				0FB8DA8E26A45A5000DAAC21 /* ConversationViewModel.swift */,
+				0FA9C6BE26A5CB5A00BCE087 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				0FDE2FDA26A328E40000F7F3 /* MessageCell.swift */,
 				0FB8DA8C26A4574F00DAAC21 /* ConversationCell.swift */,
 				0FD01C6E26A5B84D00BBD837 /* ProfileHeader.swift */,
+				0FA9C6C026A5D06900BCE087 /* ProfileCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 				0FFA0C172698899300D78931 /* Extensions.swift in Sources */,
 				0F7425A226A33811000A65CA /* MessageViewModel.swift in Sources */,
 				0FD01C6D26A5AD0500BBD837 /* ProfileController.swift in Sources */,
+				0FA9C6BF26A5CB5A00BCE087 /* ProfileViewModel.swift in Sources */,
 				0FB8DA8F26A45A5000DAAC21 /* ConversationViewModel.swift in Sources */,
 				0F70B6992699C13E00298B1C /* LoginViewModel.swift in Sources */,
 				0FF2E51F26A3EA770008AF72 /* Constants.swift in Sources */,
@@ -580,6 +587,7 @@
 				0FE4579B26935578003EF7C2 /* SceneDelegate.swift in Sources */,
 				0FE457D2269364EA003EF7C2 /* LoginController.swift in Sources */,
 				0F2B4AD526A1BCDD00003C6A /* ChatController.swift in Sources */,
+				0FA9C6C126A5D06900BCE087 /* ProfileCell.swift in Sources */,
 				0FD01C6F26A5B84D00BBD837 /* ProfileHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

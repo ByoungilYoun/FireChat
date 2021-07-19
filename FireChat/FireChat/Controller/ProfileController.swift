@@ -39,9 +39,11 @@ class ProfileController : UITableViewController {
     
     tableView.tableHeaderView = headerView
     headerView.delegate = self
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileCell.identifier)
     tableView.tableFooterView = UIView()
+    tableView.rowHeight = 64
     tableView.contentInsetAdjustmentBehavior = .never // 테이블뷰 헤더 위에 status bar 위까지 덮어쓰도록 하는 메소드
+    tableView.backgroundColor = .systemGroupedBackground
   }
   
   func fetchUser() {
@@ -50,18 +52,28 @@ class ProfileController : UITableViewController {
       self.user = user
     }
   }
-  
-  //MARK: - @objc func
 }
 
+  //MARK: - UITableviewDataSource
 extension ProfileController {
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 2
+    return ProfileViewModel.allCases.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: ProfileCell.identifier, for: indexPath) as! ProfileCell
+    cell.backgroundColor = .white
+    cell.selectionStyle = .none
+    let viewModel = ProfileViewModel(rawValue: indexPath.row)
+    cell.viewModel = viewModel
+    cell.accessoryType = .disclosureIndicator // row 옆에 '>' 버튼모양 자동으로 생성되도록 하는 제공되는 기능
     return cell
+  }
+}
+
+extension ProfileController {
+  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    return UIView()
   }
 }
 
