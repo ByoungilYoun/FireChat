@@ -22,6 +22,8 @@
 		0F7FDC0A269F54260092F7E0 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7FDC09269F54260092F7E0 /* Service.swift */; };
 		0FB8DA8D26A4574F00DAAC21 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8DA8C26A4574F00DAAC21 /* ConversationCell.swift */; };
 		0FB8DA8F26A45A5000DAAC21 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8DA8E26A45A5000DAAC21 /* ConversationViewModel.swift */; };
+		0FD01C6D26A5AD0500BBD837 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD01C6C26A5AD0500BBD837 /* ProfileController.swift */; };
+		0FD01C6F26A5B84D00BBD837 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD01C6E26A5B84D00BBD837 /* ProfileHeader.swift */; };
 		0FDE2FDB26A328E40000F7F3 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE2FDA26A328E40000F7F3 /* MessageCell.swift */; };
 		0FE4579926935578003EF7C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE4579826935578003EF7C2 /* AppDelegate.swift */; };
 		0FE4579B26935578003EF7C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE4579A26935578003EF7C2 /* SceneDelegate.swift */; };
@@ -76,6 +78,8 @@
 		0F7FDC09269F54260092F7E0 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		0FB8DA8C26A4574F00DAAC21 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		0FB8DA8E26A45A5000DAAC21 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		0FD01C6C26A5AD0500BBD837 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		0FD01C6E26A5B84D00BBD837 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		0FDE2FDA26A328E40000F7F3 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		0FE4579526935578003EF7C2 /* FireChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE4579826935578003EF7C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 				0FE457CE26935669003EF7C2 /* ConversationsController.swift */,
 				0F2434DF269DE8A600008B45 /* NewMessageController.swift */,
 				0F2B4AD426A1BCDD00003C6A /* ChatController.swift */,
+				0FD01C6C26A5AD0500BBD837 /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				0F2B4AD626A1D86000003C6A /* CustomInputAccessoryView.swift */,
 				0FDE2FDA26A328E40000F7F3 /* MessageCell.swift */,
 				0FB8DA8C26A4574F00DAAC21 /* ConversationCell.swift */,
+				0FD01C6E26A5B84D00BBD837 /* ProfileHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 				0F70B69B2699E94800298B1C /* RegistrationViewModel.swift in Sources */,
 				0FFA0C172698899300D78931 /* Extensions.swift in Sources */,
 				0F7425A226A33811000A65CA /* MessageViewModel.swift in Sources */,
+				0FD01C6D26A5AD0500BBD837 /* ProfileController.swift in Sources */,
 				0FB8DA8F26A45A5000DAAC21 /* ConversationViewModel.swift in Sources */,
 				0F70B6992699C13E00298B1C /* LoginViewModel.swift in Sources */,
 				0FF2E51F26A3EA770008AF72 /* Constants.swift in Sources */,
@@ -573,6 +580,7 @@
 				0FE4579B26935578003EF7C2 /* SceneDelegate.swift in Sources */,
 				0FE457D2269364EA003EF7C2 /* LoginController.swift in Sources */,
 				0F2B4AD526A1BCDD00003C6A /* ChatController.swift in Sources */,
+				0FD01C6F26A5B84D00BBD837 /* ProfileHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
