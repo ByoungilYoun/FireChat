@@ -20,6 +20,8 @@ class ProfileController : UITableViewController {
   
   private lazy var headerView = ProfileHeader(frame: .init(x: 0, y: 0, width: view.frame.width, height: 380))
   
+  private let footerView = ProfileFooter()
+  
   //MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,10 +42,12 @@ class ProfileController : UITableViewController {
     tableView.tableHeaderView = headerView
     headerView.delegate = self
     tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileCell.identifier)
-    tableView.tableFooterView = UIView()
     tableView.rowHeight = 64
     tableView.contentInsetAdjustmentBehavior = .never // 테이블뷰 헤더 위에 status bar 위까지 덮어쓰도록 하는 메소드
     tableView.backgroundColor = .systemGroupedBackground
+    
+    footerView.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
+    tableView.tableFooterView = footerView
   }
   
   func fetchUser() {
