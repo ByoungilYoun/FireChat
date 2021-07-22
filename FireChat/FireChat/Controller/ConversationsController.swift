@@ -106,12 +106,14 @@ class ConversationsController : UIViewController {
   }
   
   func fetchConverations() {
+    showLoader(true)
+    
     Service.fetchConversations { conversations in
-      
       conversations.forEach { conversation in
         let message = conversation.message
-        self.conversationsDictionary[message.chatPartnerId] = conversation  // dictionary를 만들어서 message.chatPartnerId 를 key로 해서 conversation 벨류를 넣는것이다. 딕셔너리로 같은 키면 중복이 안되기 때문에 conversation 리스트에 중복이 없는거다. 
+        self.conversationsDictionary[message.chatPartnerId] = conversation  // dictionary를 만들어서 message.chatPartnerId 를 key로 해서 conversation 벨류를 넣는것이다. 딕셔너리로 같은 키면 중복이 안되기 때문에 conversation 리스트에 중복이 없는거다.
       }
+      self.showLoader(false)
       self.conversations = Array(self.conversationsDictionary.values)
       self.tableView.reloadData()
     }

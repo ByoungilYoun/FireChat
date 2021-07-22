@@ -154,8 +154,8 @@ class RegistrationController : UIViewController {
     showLoader(true, withText: "Signing You Up")
     AuthService.shared.createUser(credentials: credentials) { error in
       if let error = error {
-        print("Debug : Failed to create user : \(error.localizedDescription)")
         self.showLoader(false)
+        self.showError(error.localizedDescription)
         return
       }
       self.showLoader(false)
